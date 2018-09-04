@@ -48,7 +48,6 @@
 				var form = layui.form(),
 					layer = layui.layer;
 
-
 				//自定义验证规则
 				form.verify({
 					title: function(value) {
@@ -58,10 +57,9 @@
 					},
 					password: [/(.+){6,12}$/, '密码必须6到12位'],
 					verity: [/(.+){6}$/, '验证码必须是6位'],
-					
+
 				});
 
-				
 				//监听提交
 				form.on('submit(login)', function(data) {
 					layer.alert(JSON.stringify(data.field), {

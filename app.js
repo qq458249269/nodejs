@@ -11,9 +11,9 @@ var app = express();
 
 //请求转发开始
 var proxy = require('http-proxy-middleware');//引入代理模块
-var port = 80;
+var port = 3000;
 var httpsport =8443; 
-var apiProxy = proxy('/api', { target: 'http://localhost:8080/yxh',changeOrigin: true });
+var apiProxy = proxy('/api', { target: 'http://localhost/',changeOrigin: true });
 app.use('/', apiProxy);
 app.get('/', function(req,res){
      res.sendFile(__dirname+'/public/admin/index/login.html');
